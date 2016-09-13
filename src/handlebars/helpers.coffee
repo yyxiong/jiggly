@@ -1,5 +1,6 @@
 handlebars = require "handlebars"
 _ = require "lodash"
+moment = require "moment"
 
 require "./i18n_helpers"
 
