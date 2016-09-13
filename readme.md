@@ -6,9 +6,9 @@
 
 ## usage
 
-First, install jigglypuff use git repo url or local path.
+First, install zcyjiggly use git repo url or local path.
 
-`npm install -g jigglypuff`
+`npm install -g zcyjiggly`
 
 Second, run it.
 
@@ -20,7 +20,7 @@ help:
 
 ## config
 
-jigglypuff can accept a config file named `jiggly.json` under the work path.
+zcyjiggly can accept a config file named `jiggly.json` under the work path.
 
 ### options
 
