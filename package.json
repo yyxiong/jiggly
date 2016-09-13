@@ -2,9 +2,9 @@
   "name": "zcyjiggly",
   "description": "Fake terminus pampas web container",
   "author": {
-    "name": "Anson Chan"
+    "name": "yunuo"
   },
-  "version": "0.0.3",
+  "version": "0.0.4",
   "dependencies": {
     "async": "~0.2.9",
     "commander": "~2.5.0",
