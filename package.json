@@ -1,0 +1,35 @@
+{
+  "name": "jigglypuff",
+  "description": "Fake terminus pampas web container",
+  "author": {
+    "name": "Anson Chan"
+  },
+  "version": "0.0.23",
+  "dependencies": {
+    "async": "~0.2.9",
+    "commander": "~2.5.0",
+    "express": "~4",
+    "handlebars": "4.0.4",
+    "lodash": "~2.4.1",
+    "moment": "^2.15.0",
+    "node-watch": "~0.3.4",
+    "redis": "~0.10.0",
+    "tracer": "~0.6.1"
+  },
+  "devDependencies": {
+    "should": "~2.1.1",
+    "coffee-script": "~1.6.3",
+    "mocha": "~1.17.0"
+  },
+  "bin": {
+    "jiggly": "./bin/jiggly"
+  },
+  "scripts": {
+    "compile": "rm -rf ./lib && coffee --compile --output lib/ src/",
+    "prepublish": "npm run compile",
+    "build": "npm i -g .",
+    "debug": "npm run compile && node --debug-brk ./lib/index.js",
+    "test": "cd test && env NODE_ENV=test mocha **/*.coffee --compilers coffee:coffee-script --require should -R spec",
+    "start": "coffee ./src/index.coffee"
+  }
+}
