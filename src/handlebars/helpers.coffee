@@ -36,11 +36,23 @@ handlebars.registerHelper "mod", (a, b, options) ->
   else
     options.fn @
 
+handlebars.registerHelper "formatDate", (date, type, options) ->
+  return unless date
+  switch type
+    when "gmt" then moment(parseInt date).format("EEE MMM dd HH:mm:ss Z yyyy")
+    when "day" then moment(parseInt date).format("YYYY-MM-DD")
+    when "minute" then moment(parseInt date).format("YYYY-MM-DD HH:mm")
+    else
+      if typeof(type) is "string"
+        moment(parseInt date).format(type)
+      else
+        moment(parseInt date).format("YYYY-MM-DD HH:mm:ss")
+
 handlebars.registerHelper "pp", (options) ->
   JSON.stringify @
 
-handlebars.registerHelper "json", (options) ->
-  JSON.stringify @
+handlebars.registerHelper "json", (json, options) ->
+  JSON.stringify(json or @)
 
 handlebars.registerHelper "size", (a, options) ->
   return 0 if a is undefined
