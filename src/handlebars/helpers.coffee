@@ -13,6 +13,12 @@ handlebars.registerHelper "equals", (a, b, options) ->
   else
     options.inverse @
 
+handlebars.registerHelper "lt", (a, b, options) ->
+  if a < b
+    options.fn(this)
+  else
+    options.inverse(this)
+
 handlebars.registerHelper "gt", (a, b, options) ->
   if parseFloat(a) > parseFloat(b)
     options.fn @
@@ -36,6 +42,15 @@ handlebars.registerHelper "mod", (a, b, options) ->
     options.inverse @
   else
     options.fn @
+
+handlebars.registerHelper 'of', (a, b, options)->
+  if a == undefined
+    return
+  values = b.split(",")
+  if _.contains values, a.toString()
+    options.fn(this)
+  else
+    options.inverse(this)
 
 handlebars.registerHelper "formatDate", (date, type, options) ->
   return unless date
