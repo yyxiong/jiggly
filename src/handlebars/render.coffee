@@ -1,5 +1,6 @@
 _ = require "lodash"
 fs = require "fs"
+glob = require "glob"
 fileWatcher = require "../file_watcher"
 env = require "../enviroments"
 templateLoader = require "./template_loader"
@@ -17,6 +18,24 @@ env.extraHelpers.forEach (helperPath) ->
 ########################################################
 # helpers to support layout render
 blocks = {}
+
+componentsPartials = []
+
+registerComponentLayout = (filePath) ->
+  if !/\.hbs$/.test(filePath)
+    return;
+
+  t = fs.readFileSync(filePath)
+  name = filePath.slice(env.componentsHome.length + 1).split(".")[0]
+  name = "component:" + name
+  componentsPartials.push(name)
+  handlebars.registerPartial(name, handlebars.compile(t.toString()))
+
+findComponentLayout = () ->
+  filePaths = glob.sync(env.componentsHome + '/**/{all_templates,other_templates,templates}/*.hbs')
+  _.map(filePaths, registerComponentLayout)
+
+findComponentLayout()
 
 handlebars.registerHelper "partial", (name, options) ->
   unless block = blocks[name]
