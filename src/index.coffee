@@ -16,7 +16,7 @@ app = express()
 app.get /^([^\.]+)$/, (req, res, next) ->
   path = req.params[0]
   # find data
-  urlDataResult = dataProvider.getUrlData(path, req.query)
+  urlDataResult = dataProvider.getUrlData(path, req.query, res)
   globalData = dataProvider.getGlobalData()
   # merge data and query params
   context = if _.isPlainObject(urlDataResult.result) then _.assign req.query, urlDataResult.result else req.query
@@ -45,7 +45,7 @@ app.get /^(.+)$/, (req, res, next) ->
 
 app.all /^(.+)$/, (req, res) ->
   path = req.params[0]
-  dataResult = dataProvider.getUrlData(path, req.method, req.query)
+  dataResult = dataProvider.getUrlData(path, req.query, res)
   if dataResult.found
     res.send(dataResult.result)
   else
