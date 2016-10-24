@@ -56,14 +56,14 @@ handlebars.registerHelper 'of', (a, b, options)->
 handlebars.registerHelper "formatDate", (date, type, options) ->
   return unless date
   switch type
-    when "gmt" then moment(parseInt date).format("EEE MMM dd HH:mm:ss Z yyyy")
-    when "day" then moment(parseInt date).format("yyyy-MM-dd")
-    when "minute" then moment(parseInt date).format("yyyy-MM-dd HH:mm")
+    when "gmt" then moment(parseInt date).format("EEE MMM DD HH:mm:ss Z YYYY")
+    when "day" then moment(parseInt date).format("YYYY-MM-DD")
+    when "minute" then moment(parseInt date).format("YYYY-MM-DD HH:mm")
     else
       if typeof(type) is "string"
         moment(parseInt date).format(type)
       else
-        moment(parseInt date).format("yyyy-MM-dd HH:mm:ss")
+        moment(parseInt date).format("YYYY-MM-DD HH:mm:ss")
 
 handlebars.registerHelper "pp", (options) ->
   JSON.stringify @

@@ -28,12 +28,12 @@ fileWatcher.watchFiles dataFilePaths, (dataFilePath) ->
     console.log("[Data Reload Error] #{dataFilePath} - #{err}")
 
 module.exports =
-  getUrlData: (path, method, params) ->
+  getUrlData: (path, params, res) ->
     return {found: false} unless _.has(urlData, path)
     data = urlData[path]
     {
       found: true
-      result: if _.isFunction(data) then data(params, method) else data
+      result: if _.isFunction(data) then data(params, res) else data
     }
 
   getCompData: (path, params) ->
