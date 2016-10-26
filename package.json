@@ -4,7 +4,7 @@
   "author": {
     "name": "yunuo"
   },
-  "version": "0.0.12",
+  "version": "0.0.14",
   "dependencies": {
     "chokidar": "~1.6.1",
     "commander": "~2.9.0",
@@ -13,7 +13,7 @@
     "handlebars": "~4.0.4",
     "lodash": "~4.16.4",
     "moment": "~2.15.0",
-    "serve-static": "～1.11.1"
+    "serve-static": "~1.11.1"
   },
   "devDependencies": {},
   "bin": {
