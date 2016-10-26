@@ -4,7 +4,7 @@
   "author": {
     "name": "yunuo"
   },
-  "version": "0.0.8",
+  "version": "0.0.9",
   "dependencies": {
     "commander": "~2.5.0",
     "express": "~4",
