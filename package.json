@@ -12,7 +12,8 @@
     "handlebars": "~4.0.4",
     "lodash": "~4.16.4",
     "moment": "~2.15.0",
-    "node-watch": "~0.4.1"
+    "node-watch": "~0.4.1",
+    "serve-static": "～1.11.1"
   },
   "devDependencies": {},
   "bin": {
