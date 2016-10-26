@@ -15,9 +15,6 @@
     "node-watch": "~0.3.4"
   },
   "devDependencies": {
-    "should": "~2.1.1",
-    "coffee-script": "~1.6.3",
-    "mocha": "~1.17.0"
   },
   "bin": {
     "jiggly": "./bin/jiggly"
