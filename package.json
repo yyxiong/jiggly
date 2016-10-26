@@ -1,21 +1,20 @@
 {
   "name": "zcyjiggly",
-  "description": "Fake terminus pampas web container",
+  "description": "node web container",
   "author": {
     "name": "yunuo"
   },
-  "version": "0.0.10",
+  "version": "0.0.12",
   "dependencies": {
-    "commander": "~2.5.0",
-    "express": "~4",
+    "commander": "~2.9.0",
+    "express": "~4.14.0",
     "glob": "~7.1.1",
-    "handlebars": "4.0.4",
-    "lodash": "~2.4.1",
+    "handlebars": "~4.0.4",
+    "lodash": "~4.16.4",
     "moment": "~2.15.0",
-    "node-watch": "~0.4.0"
+    "node-watch": "~0.4.1"
   },
-  "devDependencies": {
-  },
+  "devDependencies": {},
   "bin": {
     "jiggly": "./bin/jiggly"
   },
