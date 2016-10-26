@@ -1,12 +1,16 @@
 
 var express = require("express");
 
-var env = require("./lib/enviroments");
+var config = require("./lib/config");
 
 app = express();
 
+require('./lib/express')(app);
+
 require('./lib/routes')(app);
 
-app.listen(env.serverPort);
+require('./lib/file_watcher');
 
-console.log("server listening at port: " + env.serverPort);
+app.listen(config.serverPort);
+
+console.log("server listening at port: " + config.serverPort);
