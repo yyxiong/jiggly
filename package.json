@@ -4,7 +4,7 @@
   "author": {
     "name": "yunuo"
   },
-  "version": "0.0.7",
+  "version": "0.0.8",
   "dependencies": {
     "commander": "~2.5.0",
     "express": "~4",
@@ -12,7 +12,7 @@
     "handlebars": "4.0.4",
     "lodash": "~2.4.1",
     "moment": "~2.15.0",
-    "node-watch": "~0.3.4"
+    "node-watch": "~0.4.0"
   },
   "devDependencies": {
   },
